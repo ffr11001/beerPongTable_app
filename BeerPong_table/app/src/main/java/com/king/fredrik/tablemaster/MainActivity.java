@@ -191,7 +191,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void fadeInput(View view) {
+    public void staticInput(View view) {
 
         String init = "2";
         String msg = init+"0";
@@ -203,7 +203,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void auxInput(View view) {
+    public void fadeInput(View view) {
 
         String init = "2";
         String msg = init+"1";
@@ -215,7 +215,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void micInput(View view) {
+    public void auxInput (View view) {
 
         String init = "2";
         String msg = init+"2";
@@ -227,15 +227,21 @@ public class MainActivity extends Activity {
 
     }
 
+    public void resetInput (View view) {
+
+        String init = "2";
+        String msg = init+"3";
+        try {
+            mmOutStream.write(msg.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void Close (View view){
 
         finish();
-    }
-
-    public void Settings (View view){
-
-        Intent intent = new Intent(this, Settings.class);
-        startActivity(intent);
     }
 
 }
